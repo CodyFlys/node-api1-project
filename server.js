@@ -94,6 +94,6 @@ server.get("/api/users/:id", (req, res) => {
     }
 })
 
-server.listen(5000, () => 
+server.listen(port, () => 
 console.log(`Server listening on http://localhost:${port}`)
 )
