@@ -1,7 +1,7 @@
 const express = require('express'); // imports the express package
 const db = require("./database.js");
 const server = express(); // creates the server using express
-require=('dotenv').config();
+require('dotenv').config();
 
 const port = process.env.PORT;
 
