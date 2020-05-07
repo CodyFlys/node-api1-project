@@ -1,6 +1,9 @@
 const express = require('express'); // imports the express package
 const db = require("./database.js");
 const server = express(); // creates the server using express
+require=('dotenv').config();
+
+const port = process.env.PORT;
 
 server.use(express.json())
 
@@ -17,7 +20,7 @@ console.log(allIds)
 
 
 server.get('/', (req, res) => {
-    res.send('Main Root End Point!')
+    res.status(200).json({MESSAGE: process.env.MOTD})
 })
 
 server.get('/api/users', function (req, res) {
@@ -92,5 +95,5 @@ server.get("/api/users/:id", (req, res) => {
 })
 
 server.listen(5000, () => 
-console.log('Server listening on http://localhost:5000')
+console.log(`Server listening on http://localhost:${port}`)
 )
